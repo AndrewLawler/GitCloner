@@ -62,8 +62,8 @@ public class GitScriptGUI extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent eActionEvent) {
-        Output.setText(" Working . . .");
         Output.setVisible(true);
+        Output.setText(" Working . . .");
         buttonInput();
     }
 
