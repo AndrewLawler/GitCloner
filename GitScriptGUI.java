@@ -5,15 +5,8 @@ import java.awt.Font;
 
 public class GitScriptGUI extends JFrame implements ActionListener {
 
-    private JLabel inputRepo;
-    private JLabel inputID;
-
     private JLabel Output;
     private JLabel NameOfFile;
-
-    private JTextField repoField;
-    private JTextField IDField;
-
     private JButton button;
     private Git obj;
 
@@ -59,17 +52,10 @@ public class GitScriptGUI extends JFrame implements ActionListener {
 
     public void buttonInput() {
 
-        String Repo = repoField.getText();
-        String GitID = IDField.getText();
-
-        if (Repo.length() > 0 && GitID.length() > 0) {
-            try {
-                obj.call(GitID, Repo);
-                Output.setText(" Completed!");
-            } catch (Exception e) {
-            }
-        } else {
-            Output.setText("Wrong Input!");
+        try {
+            obj.call("GitID", "Repo");
+            Output.setText(" Completed!");
+        } catch (Exception e) {
         }
         Output.setVisible(true);
 
