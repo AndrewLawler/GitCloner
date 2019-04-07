@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
 
-public class GitCloneGUI extends JFrame implements ActionListener {
+public class GitScriptGUI extends JFrame implements ActionListener {
 
     private JLabel inputRepo;
     private JLabel inputID;
@@ -19,26 +19,16 @@ public class GitCloneGUI extends JFrame implements ActionListener {
 
     private void buildGUI() {
 
-        this.setTitle("Rotate");
+        this.setTitle("GitScript");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(200, 170, 500, 300);
         this.setVisible(true);
 
         setLayout(null);
 
-        NameOfFile = new JLabel("Git Cloner");
+        NameOfFile = new JLabel("Git Script");
         NameOfFile.setFont(new Font("Sans-Serif", Font.PLAIN, 30));
         NameOfFile.setForeground(Color.WHITE);
-
-        inputRepo = new JLabel("Enter repo name: ");
-        inputRepo.setForeground(Color.WHITE);
-        repoField = new JTextField(20);
-        repoField.setToolTipText("eg: React-Todo");
-
-        inputID = new JLabel("Enter GitHub ID: ");
-        inputID.setForeground(Color.WHITE);
-        IDField = new JTextField(15);
-        IDField.setToolTipText("eg: 'AndrewLawler' ");
 
         button = new JButton("Clone");
         button.addActionListener(this);
@@ -52,30 +42,19 @@ public class GitCloneGUI extends JFrame implements ActionListener {
 
         // add the components to the frame
         add(NameOfFile);
-        add(inputID);
-        add(IDField);
-        add(inputRepo);
-        add(repoField);
         add(button);
         add(Output);
 
         // position the components and size them
         NameOfFile.setBounds(175, 20, 300, 40);
-
-        inputID.setBounds(10, 70, 200, 40);
-        IDField.setBounds(140, 70, 200, 40);
-
-        inputRepo.setBounds(10, 120, 200, 40);
-        repoField.setBounds(140, 120, 200, 40);
-
-        button.setBounds(175, 170, 120, 30);
-        Output.setBounds(176, 210, 400, 40);
+        button.setBounds(175, 80, 120, 30);
+        Output.setBounds(176, 120, 400, 40);
 
     }
 
-    public GitCloneGUI() {
+    public GitScriptGUI() {
         buildGUI();
-        obj = new GitClone();
+        obj = new GitScript();
     }
 
     public void buttonInput() {
@@ -101,11 +80,11 @@ public class GitCloneGUI extends JFrame implements ActionListener {
     }
 
     public static void Colours(JFrame frame) {
-        frame.getContentPane().setBackground(Color.BLUE);
+        frame.getContentPane().setBackground(Color.PINK);
     }
 
     public static void main(String[] args) {
-        GitCloneGUI frame = new GitCloneGUI();
+        GitScriptGUI frame = new GitScriptGUI();
         Colours(frame);
     }
 
