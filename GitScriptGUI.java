@@ -53,14 +53,9 @@ public class GitScriptGUI extends JFrame implements ActionListener {
     public void buttonInput() {
 
         try {
-            obj.call("GitID", "Repo");
             Output.setVisible(true);
             Output.setText(" Working . . .");
-            try {
-                Thread.sleep(4000);
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
+            obj.call("GitID", "Repo");
             Output.setText(" Completed!");
         } catch (Exception e) {
         }
