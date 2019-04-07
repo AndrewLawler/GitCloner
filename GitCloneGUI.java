@@ -86,6 +86,13 @@ public class GitCloneGUI extends JFrame implements ActionListener {
         if (Repo.length() > 0 && GitID.length() > 0) {
             try {
                 obj.call(GitID, Repo);
+                Output.setVisible(true);
+                Output.setText(" Working . . .");
+                try {
+                    Thread.sleep(4000);
+                } catch (Exception e) {
+                    // TODO: handle exception
+                }
                 Output.setText(" Completed!");
             } catch (Exception e) {
             }
